@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="fullBody">
+    <div id="gameTitle">
+      <h1 id="gameName">Tic Tac Toe</h1>
+      <div class="msg-container hide">
+        <p id="msg">Winner</p>
+        <button id="new-btn">New Game</button>
+      </div>
+    </div>
+    <div id="outrBody">
+      <div id="left">
+        <h2 id="player1">Player 0 </h2>
+        <h3 id="score1">00</h3>
+      </div>
+      <div id="middle">
+        <div class="game">
+          <button class="button" ></button>
+          <button class="button" ></button>
+          <button class="button" ></button>
+          <button class="button" ></button>
+          <button class="button" ></button>
+          <button class="button" ></button>
+          <button class="button" ></button>
+          <button class="button" ></button>
+          <button class="button" ></button>
+        </div>
+        <div id="reset">
+          <button id="rGame">Reset Game</button>
+          <button id="rScore">Reset Score</button>
+        </div>
+      </div>
+      <div id="right">
+        <h2 id="player2">Player X</h2>
+        <h3 id="score2">00 </h3>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
