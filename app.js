@@ -1,7 +1,9 @@
 let buttons = document.querySelectorAll(".button");
 let resetGame = document.querySelector("#rGame");
 let newGameBtn = document.querySelector("#new-btn");
-// let resetScore = document.querySelector("#rScore");
+//let resetScore = document.querySelector("#rScore");
+let oScore = document.querySelector("#scoreO")
+let xScore = document.querySelector("#scoreX")
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
 
@@ -9,7 +11,8 @@ let msg = document.querySelector("#msg");
 
 let turnO = true;      //playerX, playerO
 let count = 0;         //To Track turn of player
-
+let scoreOfO = 0;
+let scoreOfX = 0;
 
 const winCondition = [
     [0, 1, 2],
@@ -32,13 +35,10 @@ const resetingGame = () => {
 };
 
 
-
-
-
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         if (turnO) {                         // for player0
-            button.innerText = "0";
+            button.innerText = "O";
             turnO = false;
         } else {
             button.innerText = "X";              // for playerX
@@ -97,14 +97,21 @@ const checkWinner = () => {
         if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
 
             if (pos1Val === pos2Val && pos2Val === pos3Val) {
-                //console.log("winner is", pos1Val);
-                //disableButtons();
+
+                if (pos1Val === "O") {
+                    scoreOfO++
+                    oScore.innerText = scoreOfO;
+                } else {
+                    scoreOfX++
+                    xScore.innerText = scoreOfX;
+                }
+
                 showWinner(pos1Val);
                 return true;
             }
         }
     }
-}
+};
 
 newGameBtn.addEventListener("click", resetingGame);
 

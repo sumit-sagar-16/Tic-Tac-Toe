@@ -80,3 +80,17 @@ padding-top: 5vh;
   .hide {
     display: none;
   }
+
+
+
+  #scoreO{
+    margin: 0;;
+    font-size: 10vmin;
+
+  }
+
+  #scoreX{
+    margin: 0;;
+    font-size: 10vmin;
+
+  }
