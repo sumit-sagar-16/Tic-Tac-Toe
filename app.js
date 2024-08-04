@@ -1,7 +1,7 @@
 let buttons = document.querySelectorAll(".button");
 let resetGame = document.querySelector("#rGame");
 let newGameBtn = document.querySelector("#new-btn");
-//let resetScore = document.querySelector("#rScore");
+let resetScore = document.querySelector("#rScore"); 
 let oScore = document.querySelector("#scoreO")
 let xScore = document.querySelector("#scoreX")
 let msgContainer = document.querySelector(".msg-container");
@@ -25,6 +25,7 @@ const winCondition = [
     [2, 4, 6]
 
 ];
+ 
 
 
 const resetingGame = () => {
@@ -34,10 +35,18 @@ const resetingGame = () => {
     msgContainer.classList.add("hide");
 };
 
+const resetingScore = () =>{
+    scoreOfO = 0;
+    oScore.innerText = scoreOfO;
+
+    scoreOfX = 0;
+    xScore.innerText = scoreOfX;
+}
+
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        if (turnO) {                         // for player0
+        if (turnO) {                             // for player0
             button.innerText = "O";
             turnO = false;
         } else {
@@ -70,8 +79,6 @@ const disableButtons = () => {
 };
 
 
-
-
 const showWinner = (winner) => {
     msg.innerText = `Congratulations, Winner is ${winner}`;
     msgContainer.classList.remove("hide");
@@ -99,7 +106,7 @@ const checkWinner = () => {
             if (pos1Val === pos2Val && pos2Val === pos3Val) {
 
                 if (pos1Val === "O") {
-                    scoreOfO++
+                    scoreOfO++ 
                     oScore.innerText = scoreOfO;
                 } else {
                     scoreOfX++
@@ -117,5 +124,5 @@ newGameBtn.addEventListener("click", resetingGame);
 
 resetGame.addEventListener("click", resetingGame);
 
-
+resetScore.addEventListener("click", resetingScore);
 
